@@ -1,0 +1,40 @@
+.dashboard-wrap {
+  flex: 1;
+  padding: 0 20px 24px 0;
+  min-width: 0;
+}
+
+.dashboard__titulo {
+  font-size: 50px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.dashboard__grid {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.dashboard__col-principal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.dashboard__col-lateral {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard__seccion {
+  flex: 1;
+  min-width: 0;
+}

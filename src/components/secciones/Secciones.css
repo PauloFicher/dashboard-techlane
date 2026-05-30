@@ -1,0 +1,423 @@
+/* ─── Contenedor general ─────────────────────────────────── */
+.seccion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── Toolbar ────────────────────────────────────────────── */
+.seccion__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.seccion__busqueda {
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  background: var(--card-bg);
+  outline: none;
+  min-width: 220px;
+  transition: border-color 0.15s;
+}
+
+.seccion__busqueda:focus { border-color: var(--blue); }
+
+.seccion__filtros {
+  display: flex;
+  gap: 4px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.seccion__filtro-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #555;
+  transition: all 0.12s;
+}
+
+.seccion__filtro-btn--activo {
+  background: var(--blue);
+  color: white;
+  font-weight: 700;
+}
+
+.seccion__btn-primario {
+  margin-left: auto;
+  background: var(--blue);
+  color: white;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+
+.seccion__btn-primario:hover { opacity: 0.88; }
+
+.seccion__btn-secundario {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: #333;
+  transition: background 0.12s;
+}
+
+.seccion__btn-secundario:hover { background: #eee; }
+
+.seccion__btn-secundario--danger {
+  border-color: #fca5a5;
+  color: #991b1b;
+}
+
+.seccion__btn-secundario--danger:hover { background: #fee2e2; }
+
+/* ─── Stats row ──────────────────────────────────────────── */
+.seccion__stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.seccion__stat-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.seccion__stat-card--verde  { border-left: 4px solid #10b981; }
+.seccion__stat-card--azul   { border-left: 4px solid var(--blue); }
+.seccion__stat-card--amarillo { border-left: 4px solid #f59e0b; }
+.seccion__stat-card--rojo   { border-left: 4px solid #ef4444; }
+
+.seccion__stat-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.seccion__stat-valor {
+  font-size: 26px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1;
+}
+
+.seccion__stat-valor--verde { color: #065f46; }
+
+.seccion__stat-cambio {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.seccion__stat-cambio--positivo { color: #065f46; }
+
+/* ─── Tabla ──────────────────────────────────────────────── */
+.tabla-wrap {
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  background: #fafafa;
+}
+
+.tabla td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #111;
+  vertical-align: middle;
+}
+
+.tabla tbody tr:last-child td { border-bottom: none; }
+.tabla tbody tr:hover td { background: #fafafa; }
+
+.tabla__producto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tabla__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.tabla__avatar--redondo { border-radius: 50%; }
+
+.tabla__nombre { font-weight: 600; color: #000; }
+.tabla__id     { font-weight: 700; color: #555; font-family: monospace; font-size: 13px; }
+.tabla__secundario { color: #666; }
+
+.tabla__monto { font-weight: 700; color: #000; }
+
+.tabla__stock--bajo  { color: #b45309; font-weight: 700; }
+.tabla__stock--vacio { color: #991b1b; font-weight: 700; }
+
+.tabla__categoria {
+  background: #f0f0f0;
+  color: #333;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tabla__badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tabla__acciones {
+  display: flex;
+  gap: 6px;
+}
+
+.tabla__accion-btn {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.12s;
+}
+
+.tabla__accion-btn:hover { background: #f0f0f0; }
+.tabla__accion-btn--danger:hover { background: #fee2e2; }
+
+/* ─── Pie de sección ─────────────────────────────────────── */
+.seccion__pie {
+  padding: 8px 4px;
+}
+
+.seccion__total {
+  font-size: 13px;
+  color: #888;
+}
+
+/* ─── Ingresos específico ────────────────────────────────── */
+.ingresos__tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px;
+  width: fit-content;
+}
+
+.ingresos__tab {
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #555;
+  transition: all 0.12s;
+}
+
+.ingresos__tab--activo {
+  background: var(--blue);
+  color: white;
+  font-weight: 700;
+}
+
+.ingresos__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 16px;
+}
+
+.ingresos__card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+
+.ingresos__card-titulo {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.ingresos__grafico {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 160px;
+}
+
+.ingresos__barra-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.ingresos__barra {
+  width: 100%;
+  background: var(--blue-chart);
+  border-radius: 4px 4px 0 0;
+  transition: opacity 0.12s;
+}
+
+.ingresos__barra:hover { opacity: 0.75; }
+
+.ingresos__barra--vacia { background: var(--bg); border: 1px dashed #ccc; }
+
+.ingresos__barra-mes {
+  font-size: 11px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.ingresos__categorias { display: flex; flex-direction: column; gap: 16px; }
+
+.ingresos__categoria-item { display: flex; flex-direction: column; gap: 4px; }
+
+.ingresos__categoria-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ingresos__categoria-nombre { font-size: 14px; font-weight: 600; color: #000; }
+.ingresos__categoria-monto  { font-size: 14px; font-weight: 700; color: #000; }
+.ingresos__categoria-pct    { font-size: 12px; color: #888; }
+
+.ingresos__barra-prog {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.ingresos__barra-prog-fill {
+  height: 100%;
+  background: var(--blue-chart);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+/* ─── Promociones específico ─────────────────────────────── */
+.promo__vista-toggle {
+  display: flex;
+  gap: 2px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.promo__vista-btn {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #555;
+  transition: all 0.12s;
+}
+
+.promo__vista-btn--activo { background: var(--bg); color: #000; }
+
+.promo__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.promo__card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.promo__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.promo__card-icono { font-size: 24px; }
+
+.promo__card-nombre {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.3;
+}
+
+.promo__card-codigo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.promo__codigo {
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 700;
+  background: #f0f0f0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+.promo__card-info { display: flex; flex-direction: column; gap: 6px; }
+
+.promo__info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promo__info-label { font-size: 12px; color: #888; }
+.promo__info-valor { font-size: 13px; font-weight: 600; color: #000; }
+
+.promo__card-acciones { display: flex; gap: 8px; margin-top: 4px; }
